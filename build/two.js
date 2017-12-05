@@ -1,3 +1,4 @@
+/*! 版权所有！！！ */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -64,7 +65,12 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
+/* 0 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 1 */,
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -76,16 +82,9 @@
  * Created by feng on 2017/12/4.
  */
 
-__webpack_require__(3);
+__webpack_require__(0);
 var two = 2;
 console.log(22222222222222);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"root":"_3Bfy8p-OVP8VS_FDZhSBP9"};
 
 /***/ })
 /******/ ]);
