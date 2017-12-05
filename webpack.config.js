@@ -24,9 +24,6 @@ module.exports = {
         test : /(\.js|\.jsx)$/,
         use : {
           loader : 'babel-loader',
-          options : {
-            presets : ["es2015"]
-          }
         },
         exclude : '/node_modules/'
       },
@@ -51,6 +48,13 @@ module.exports = {
 
     ]
   },
+  babel: {
+    presets: ['es2015', 'stage-0', 'react'],
+    plugins: ['transform-runtime', ['import', {
+      libraryName: 'antd',
+      style: 'css'
+    }]]
+  },
   plugins:[
     new extractTextWebpackPlugin('build.css'),
     new webpack.BannerPlugin('版权所有！！！'),
@@ -63,11 +67,6 @@ module.exports = {
       filename:'two.html',   //输出文件的名字，不写默认index.html
       template:'./two/two.html', //模板html路径
       chunks:['two']  //指定当前html要引入的文件（entry的文件名）
-    }),
-    new htmlWebpackPlugin({
-
-      template:'./index.html', //模板html路径
-
     })
   ]
 

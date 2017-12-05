@@ -2,7 +2,14 @@
  * Created by feng on 2017/12/4.
  */
 
-require('../../css/index.css');
-const one = 1;
-console.log(111111111111111)
+import React from "react";
+import { render } from 'react-dom';
+//import 'antd.css';
 
+import {Button} from 'antd'
+
+
+
+render(<div>
+  <Button>one</Button>
+</div>,document.getElementById('root'));
