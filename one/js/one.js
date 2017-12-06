@@ -4,12 +4,22 @@
 
 import React from "react";
 import { render } from 'react-dom';
-//import 'antd.css';
-
-import {Button} from 'antd'
-
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
 
 
-render(<div>
-  <Button>one</Button>
-</div>,document.getElementById('root'));
+
+
+
+render(
+  <div>
+    <Layout>
+      <Header style={{backgroundColor:'#ccc'}}>Header</Header>
+      <Layout style={{height:'calc(100vh - 133px)',backgroundColor:'#fff'}}>
+        <Sider>Sider</Sider>
+        <Content>Content</Content>
+      </Layout>
+      <Footer>Footer</Footer>
+    </Layout>
+  </div>,
+  document.getElementById('root'));

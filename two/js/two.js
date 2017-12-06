@@ -5,15 +5,25 @@
 
 import React from "react";
 import {render} from 'react-dom';
-//import 'antd.css';
-
-import {Button} from 'antd';
-
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
 
 
-render(<div>
- <Button>two</Button>
-</div>,document.getElementById('root'));
+
+
+
+render(
+  <div>
+   <Layout>
+    <Header style={{backgroundColor:'#ccc'}}>Header</Header>
+    <Layout style={{height:'calc(100vh - 133px)',backgroundColor:'#fff'}}>
+     <Content>Content</Content>
+     <Sider>Sider</Sider>
+    </Layout>
+    <Footer>Footer</Footer>
+   </Layout>
+  </div>,
+  document.getElementById('root'));
 
 
 

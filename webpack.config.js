@@ -23,7 +23,7 @@ module.exports = {
       {
         test : /(\.js|\.jsx)$/,
         use : {
-          loader : 'babel-loader',
+          loader : 'babel-loader'
         },
         exclude : '/node_modules/'
       },
@@ -47,13 +47,6 @@ module.exports = {
       }
 
     ]
-  },
-  babel: {
-    presets: ['es2015', 'stage-0', 'react'],
-    plugins: ['transform-runtime', ['import', {
-      libraryName: 'antd',
-      style: 'css'
-    }]]
   },
   plugins:[
     new extractTextWebpackPlugin('build.css'),
