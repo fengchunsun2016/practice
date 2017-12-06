@@ -3,7 +3,7 @@
 - 关于antd的.babelrc或webpack配置请参考 [ant-design官网](https://ant.design/docs/react/introduce-cn)
 
 
-**ps** : demo中用了npm和yarn,但是npm install老报错（具体原因暂未查明），瞬间感觉还是yarn好，所以推荐使用yarn！
+**ps** : demo中用了npm并初始化了yarn,推荐使用yarn
 
 
 
