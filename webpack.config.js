@@ -14,7 +14,7 @@ module.exports = {
   },
   output : {
     path : __dirname + "/build", //打包后文件的出口
-    filename : "[name].js" //[name]全局变量，entry的属性名
+    filename : "[name]/[name].js" //[name]全局变量，entry的属性名
   },
   devtool : 'source-map',  //生成map文件，可把报错指向源文件
 
@@ -52,13 +52,13 @@ module.exports = {
     extract,
     new webpack.BannerPlugin('版权所有！！！'),
     new htmlWebpackPlugin({
-      filename:'one.html',  //输出文件的名字，不写默认index.html
-      template:'./one/one.html',  //模板html路径
+      filename:'one/one.html',  //输出文件的名字，不写默认index.html
+      template:'./index.html',  //模板html路径
       chunks:['one']  //指定当前html要引入的文件（entry的文件名）
     }),
     new htmlWebpackPlugin({
-      filename:'two.html',
-      template:'./two/two.html',
+      filename:'two/two.html',
+      template:'./index.html',
       chunks:['two']
     })
   ]
