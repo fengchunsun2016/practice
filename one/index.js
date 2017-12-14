@@ -1,11 +1,11 @@
 /**
  * Created by feng on 2017/12/4.
  */
-
 import React from "react";
-import { render } from 'react-dom';
+import {render} from 'react-dom';
 import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
+
 
 
 

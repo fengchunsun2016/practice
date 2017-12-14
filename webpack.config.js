@@ -5,13 +5,12 @@
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 let extractTextWebpackPlugin = require('extract-text-webpack-plugin');
-let extract = new extractTextWebpackPlugin('build.css');  //打包后的css文件名
+let extract = new extractTextWebpackPlugin('build.css');  //打包抽离的css文件名
 
 module.exports = {
   entry : {
     one : __dirname + "/one/index.js", //入口文件的路径
-    two : __dirname + "/two/index.js",
-    vender : ['antd','react','react-dom']
+    two : __dirname + "/two/index.js"
   },
   output : {
     path : __dirname + "/build", //打包后文件的出口
@@ -53,15 +52,25 @@ module.exports = {
     extract,
     new webpack.BannerPlugin('版权所有！！！'),
     new htmlWebpackPlugin({
-      filename:'one/one.html',  //输出文件的名字，不写默认index.html
+      filename:'one/index.html',  //输出文件的名字，不写默认index.html
       template:'./index.html',  //模板html路径
-      chunks:['one']  //指定当前html要引入的文件（entry的文件名）
+      chunks:['common','one']  //指定当前html要引入的文件（entry）
     }),
     new htmlWebpackPlugin({
-      filename:'two/two.html',
+      filename:'two/index.html',
       template:'./index.html',
-      chunks:['two']
-    })
+      chunks:['common','two']
+    }),
+
+    //再根目录下生成，热加载用
+    new htmlWebpackPlugin({
+      filename:'index.html',
+      template:'./index.html',
+      chunks:['common',process.env.ROOT] //package.json的dev配置的set ROOT=
+    }),
+
+    // 提供公共代码
+    new webpack.optimize.CommonsChunkPlugin('common'), // 默认会把所有入口节点的公共代码提取出来
   ]
 
 }

@@ -8,7 +8,8 @@ import {render} from 'react-dom';
 import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 
-
+console.log(React,'react');
+console.log(window,'window');
 
 
 
