@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*//我所理解的闭包
+    function close() {
+        var num = 0;
+        return ()=>{
+            num++;
+            console.log(num);
+        }
+    }
+    var plus = close();
+    plus();//1
+    plus();//2*/
+
+
+    //构造函数形式的闭包
+    function Add() {
+        var num = 0;
+        this.add = function () {
+            num++;
+            console.log(num);
+        }
+    }
+    var add = new Add();
+    add.add();//1
+    add.add();//2
+    add.add();//3
+
+</script>
+
+</body>
+</html>
