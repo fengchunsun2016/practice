@@ -43,19 +43,43 @@
 
     //reject如果没有在then里捕获，可继续用.catch捕获
     let promise = new Promise(test);
-    function test(resolve,reject){
-        if(false){
+
+    function test(resolve, reject) {
+        if (false) {
             resolve('success');//第一个参数默认是成功函数并返回'success'结果
-        }else{
+        } else {
             reject('error');
         }
     }
+
     /*promise_.then(function(result){console.log(result)},function(error){console.log('then' + error)}).catch(function (err) {
         console.log('catch:' + err)
     })//==》then: error---*/
-    promise.then(function(result){console.log(result)}).catch(function (err) {
+    promise.then(function (result) {
+        console.log(result)
+    }).catch(function (err) {
         console.log('catch:' + err)
     })//==》catch：error
+
+
+    /*var a = null;
+var promise = new Promise(function (resolve,reject) {
+
+    setTimeout(function () {
+        var  b = 100;
+        a = b;
+        if(true){
+            resolve(a);
+        }else{
+            reject('err');
+        }
+    });
+})
+promise.then(function (value) {
+    console.log(a);
+    console.log(value);//100
+})*/
+
 </script>
 
 </body>
