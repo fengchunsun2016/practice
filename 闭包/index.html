@@ -7,6 +7,10 @@
 <body>
 
 <script>
+
+    //应用场景：移动端上拉加载更多，因为实际上是一个ajax分页，参数page需要请求一次累加一次，不污染全局变量就得使用闭包
+
+
     /*//我所理解的闭包
     function close() {
         var num = 0;
@@ -32,6 +36,9 @@
     add.add();//1
     add.add();//2
     add.add();//3
+
+
+
 
 </script>
 
