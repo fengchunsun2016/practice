@@ -17,4 +17,13 @@ if(true){
 
 
 
+let a = 10;
+function test(b = a) {
+    let a = 20;
+    console.log(b);//10
+}
+test();
+
+
+
 
