@@ -1,3 +1,11 @@
+//用断言库chai模块
+
+/*
+*
+  命令行输入：
+  mocha [文件名]
+* */
+
 var add = require('./add.js');
 var expect = require('chai').expect;
 // var asesrt = require('assert');

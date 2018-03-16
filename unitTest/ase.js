@@ -1,3 +1,12 @@
+//node内置模块assert
+
+/*
+*
+  命令行输入：
+  mocha [文件名]
+* */
+
+
 var assert = require('assert');
 // console.log(assert);
 
