@@ -22,8 +22,8 @@ set ROOT=two&& npm run dev  <!-- 执行这个命令代表当前热加载的是tw
   >原理：手动配置webpack.config.js
 ```
     entry : {
-        one : __dirname + "/one/index.js", //入口文件的路径
-        two : __dirname + "/two/index.js"
+        one : __dirname + "/one/symbol.js", //入口文件的路径
+        two : __dirname + "/two/symbol.js"
     },
   ...
 

@@ -9,12 +9,12 @@ let extract = new extractTextWebpackPlugin('build.css');  //打包抽离的css�
 
 module.exports = {
   entry : {
-    one : __dirname + "/one/index.js", //入口文件的路径
-    two : __dirname + "/two/index.js"
+    one : __dirname + "/one/symbol.js", //入口文件的路径
+    two : __dirname + "/two/symbol.js"
   },
   output : {
     path : __dirname + "/build", //打包后文件的出口
-    filename : "[name]/index.js" //[name]全局变量，entry的属性名
+    filename : "[name]/symbol.js" //[name]全局变量，entry的属性名
   },
   devtool : 'source-map',  //生成map文件，可把报错指向源文件
 

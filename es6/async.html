@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    async function step() {
+        let result1 = await fetch('https://www.easy-mock.com/mock/5a4340d2a3f8d40b6b2b3a1e/kratos/shop/goods/inventory#!method=get');
+        console.log(result1);
+        console.log(123);
+        let result2 = await fetch('https://www.easy-mock.com/mock/5a4340d2a3f8d40b6b2b3a1e/kratos/shop/goods/inventory#!method=get');
+        console.log(result2);
+        console.log(456);
+    }
+
+    step();
+</script>
+
+</body>
+</html>
