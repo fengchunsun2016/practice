@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>traffic</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul,li{
+      list-style: none;
+    }
+    .traffic li{
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      background-color:#ccc;
+    }
+    .traffic li span{
+      display:inline-block;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+    }
+    .traffic li:nth-of-type(1) span{
+       background-color:red;
+     }
+    .traffic li:nth-of-type(2) span{
+      background-color:yellow;
+
+    }
+    .traffic li:nth-of-type(3) span{
+      background-color:green;
+
+    }
+  </style>
+</head>
+<body>
+
+<ul class="traffic">
+  <li>
+    <span>0</span>
+  </li>
+  <li>
+    <span>1</span>
+  </li>
+  <li>
+    <span>2</span>
+  </li>
+
+</ul>
+
+
+<script src="../js/jquery.min.js"></script>
+<script>
+
+  /* for循环：
+  continue 结束本次循环，继续执行循环体； break 结束所有循环。
+  */
+
+  /* forEach
+  在forEach中，不能使用 continue 和 break ，可以使用 return 或 return false 跳出循环，效果与 for 中 continue 一样。注意该方法无法一次结束所有循环，需要一次性结束所有循环，还是老老实实使用for方法。
+  */
+
+  /*$.each()
+  在each代码块内不能使用break和continue,要实现break和continue的功能的话，要使用其它的方式：
+  break----用return false;
+  continue --用return true;
+  */
+
+  var flag = 0;
+  setInterval(function () {
+    /*$('.traffic li').eq(flag).find('span').show();
+    $('.traffic li').eq(flag).siblings().find('span').hide();
+   // console.log($('.traffic li').eq(flag)[0]);
+    console.log(flag);
+   // console.log($('.traffic li').length-1);
+    if(flag==($('.traffic li').length-1)){
+      flag=0;
+    }else{
+      flag++;
+    }*/
+    // console.log(flag);
+    /*for(var i=0;i<$('.traffic li').length;i++){
+      if(i==flag){
+        // console.log(flag,'内部');
+        $('.traffic li').eq(i).find('span').css({display:'block'});
+        $('.traffic li').eq(i).siblings().find('span').css({display:'none'});
+        if(flag==2){
+          flag=0;
+          return;
+        }else{
+          flag++;
+          return;
+        }
+      }
+    }*/
+    $('.traffic li').each(function (index,item) {
+      if(index==flag){
+        // console.log(flag,'内部');
+        $(item).find('span').css({display:'block'});
+        $(item).siblings().find('span').css({display:'none'});
+        if(flag==2){
+          flag=0;
+          return false;
+        }else{
+          flag++;
+          return false;
+        }
+
+      }
+    })
+  },2000);
+
+  var arr = [1,2,3,4,5];
+  $.each(arr,function (index,item) {
+    console.log(item);
+    if(index==1){
+      return false;
+    }
+  })
+
+
+</script>
+
+</body>
+</html>
