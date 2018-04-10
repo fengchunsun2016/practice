@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input[class=test]{
+      width:100px;
+      height:40px;
+      line-height:40px;
+      background-color:blue;
+    }
+  </style>
+</head>
+<body>
+
+<input type="button" value="测试" class="test">
+
+<script src="jquery.min.js"></script>
+<script>
+
+  bindClick();
+  bindClick();
+
+  function bindClick() {
+    $('.test').on('click',function () {
+      console.log('123')
+    })
+  }
+
+  let arr1 = [1,2,3,4,];
+  let arr2 = [2,3];
+  let str = '';
+  /*for(let i = 0;i<arr1.length;i++){
+    let arr1Item = arr1[i];
+    let flag = true;
+
+    for(let j = 0;j<arr2.length;j++){
+      let arr2Item = arr2[j];
+
+      if(arr1Item == arr2Item){
+        str += arr2Item;
+        flag = false;
+        break;
+      }
+    }
+    if(flag){
+      str += 'f';
+    }
+  }*/
+  for(let i = 0;i<arr1.length;i++){
+    let arr1Item = arr1[i];
+    let flag = true;
+
+    if(arr2.some(item=>item==arr1Item)){
+      for(let j=0;j<arr2.length;j++){
+        if(arr1Item==arr2[j]){
+          str += arr2[j];
+        }
+      }
+    }else{
+      str += 'feng';
+    }
+  }
+  console.log(str);
+
+</script>
+</body>
+</html>

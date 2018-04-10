@@ -70,38 +70,14 @@
   */
 
   var flag = 0;
+  // 用$().each()实现
   setInterval(function () {
-    /*$('.traffic li').eq(flag).find('span').show();
-    $('.traffic li').eq(flag).siblings().find('span').hide();
-   // console.log($('.traffic li').eq(flag)[0]);
-    console.log(flag);
-   // console.log($('.traffic li').length-1);
-    if(flag==($('.traffic li').length-1)){
-      flag=0;
-    }else{
-      flag++;
-    }*/
-    // console.log(flag);
-    /*for(var i=0;i<$('.traffic li').length;i++){
-      if(i==flag){
-        // console.log(flag,'内部');
-        $('.traffic li').eq(i).find('span').css({display:'block'});
-        $('.traffic li').eq(i).siblings().find('span').css({display:'none'});
-        if(flag==2){
-          flag=0;
-          return;
-        }else{
-          flag++;
-          return;
-        }
-      }
-    }*/
     $('.traffic li').each(function (index,item) {
       if(index==flag){
         // console.log(flag,'内部');
         $(item).find('span').css({display:'block'});
         $(item).siblings().find('span').css({display:'none'});
-        if(flag==2){
+        if(flag==($('.traffic li').length-1)){
           flag=0;
           return false;
         }else{
@@ -113,13 +89,47 @@
     })
   },2000);
 
+  //用for循环实现
+  setInterval(function () {
+    for(var i=0;i<$('.traffic li').length;i++){
+      if(i==flag){
+        // console.log(flag,'内部');
+        $('.traffic li').eq(i).find('span').css({display:'block'});
+        $('.traffic li').eq(i).siblings().find('span').css({display:'none'});
+        if(flag==($('.traffic li').length-1)){
+          flag=0;
+          break;
+        }else{
+          flag++;
+          break;
+        }
+      }
+    }
+  },2000);
+
+  //最简单的实现交通灯
+  setInterval(function () {
+    $('.traffic li').eq(flag).find('span').show();
+    $('.traffic li').eq(flag).siblings().find('span').hide();
+    if(flag==($('.traffic li').length-1)){
+      flag=0;
+    }else{
+      flag++;
+    }
+  },2000);
+
+
+  /*
+  //关于forEach
   var arr = [1,2,3,4,5];
   $.each(arr,function (index,item) {
     console.log(item);
     if(index==1){
-      return false;
+      return true;
     }
-  })
+    console.log('continue')
+
+  })*/
 
 
 </script>
