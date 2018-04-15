@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>防止重复提交表单</title>
+  <style>
+    .submit{
+      width:100px;
+      height:40px;
+      line-height:40px;
+      text-align: center;
+      background-color:blue;
+    }
+
+  </style>
+</head>
+<body>
+
+<input type="submit" class="submit" id="submit" value="提交">
+
+
+<script src="../js/jquery.min.js"></script>
+<script>
+  $('#submit').on('click',function () {
+    console.log('123')
+    $('#submit').attr('disabled',true);
+    setTimeout(function () {
+      $('#submit').attr('disabled',false);
+    },2000)
+
+  })
+</script>
+</body>
+</html>
