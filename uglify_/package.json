@@ -1,0 +1,15 @@
+{
+  "name": "uglify_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "uglify": "uglifyjs ./js/index.js -o ./dist/index.min.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uglify-js": "^3.3.21"
+  }
+}
