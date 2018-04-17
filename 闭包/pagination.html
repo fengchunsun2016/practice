@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" id="submit" value="获取分页数据">
+<input type="button" id="submit2" value="获取分页数据2">
+<input type="button" id="submit3" value="获取分页数据3">
+
+<script src="../js/jquery.min.js"></script>
+<script>
+
+  //如果函数执行有事件绑定，作用域也不会销毁
+  pagination();
+  function pagination() {
+    let page = 0;
+    $('#submit').on('click',submit);
+    function submit() {
+      console.log(page);
+      ++page;
+    }
+  }
+
+  //返回引用数据类型，并且被外部变量接收，作用域不销毁
+  pagination2();
+  function pagination2() {
+    let page = 10;
+
+    return function submit() {
+      console.log(page);
+      ++page;
+    }
+  }
+  let submit2 = pagination2();
+  $('#submit2').on('click',submit2);
+
+  //利用构造函数
+  function Pagination3() {
+    let page = 100;
+
+    this.submit = function() {
+      console.log(page);
+      ++page;
+    }
+  }
+  let pagination3 = new Pagination3();
+  $('#submit3').on('click',pagination3.submit);
+
+</script>
+
+</body>
+</html>
